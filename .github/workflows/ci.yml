@@ -27,7 +27,7 @@ jobs:
       - name: Setup Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
-          target: wasm32-unknown-unknown
+          target: wasm32-unknown-unknown,wasm32-wasi
 
       - name: Install cargo leptos
         uses: taiki-e/install-action@v2
