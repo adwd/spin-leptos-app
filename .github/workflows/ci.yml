@@ -39,11 +39,8 @@ jobs:
       - name: Setup `spin`
         uses: fermyon/actions/spin/setup@v1
 
-      - name: Run `spin version`
-        run: "spin --version"
-
       - name: Build
         run: spin build
 
       - name: Test
-        run: cargo test --verbose
+        run: cargo test
