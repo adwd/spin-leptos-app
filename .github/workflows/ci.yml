@@ -24,13 +24,15 @@ jobs:
       - name: Format
         run: cargo fmt --all --check
 
-      - name: Add wasm32-unknown-unknown target
-        run: rustup target add wasm32-unknown-unknown
+      - name: Setup Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          target: wasm32-unknown-unknown
 
       - name: Install cargo leptos
-        uses: baptiste0928/cargo-install@v2
+        uses: taiki-e/install-action@v2
         with:
-            crate: cargo-leptos
+            tool: cargo-leptos
 
       - name: Setup `spin`
         uses: fermyon/actions/spin/setup@v1
