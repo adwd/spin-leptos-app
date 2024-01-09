@@ -21,17 +21,22 @@ jobs:
       - name: Checkout codes
         uses: actions/checkout@v4
 
+      - name: Format
+        run: cargo fmt --all --check
+
+      - name: Add wasm32-unknown-unknown target
+        run: rustup target add wasm32-unknown-unknown
+
+      - name: Install cargo leptos
+        uses: baptiste0928/cargo-install@v2
+        with:
+            crate: cargo-leptos
+
       - name: Setup `spin`
         uses: fermyon/actions/spin/setup@v1
 
       - name: Run `spin version`
         run: "spin --version"
-
-      - name: Format
-        run: cargo fmt --all --check
-
-      - name: Install cargo leptos
-        run: cargo install --locked cargo-leptos
 
       - name: Build
         run: spin build
