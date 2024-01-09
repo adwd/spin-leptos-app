@@ -75,3 +75,12 @@ pub async fn save_count(count: u32) -> Result<(), ServerFnError> {
         .map_err(|e| ServerFnError::ServerError(e.to_string()))?;
     Ok(())
 }
+
+#[cfg(test)]
+mod tests {
+
+    #[test]
+    fn test() {
+        assert_eq!(1, 1);
+    }
+}
