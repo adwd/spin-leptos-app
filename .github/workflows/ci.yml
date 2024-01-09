@@ -30,6 +30,9 @@ jobs:
       - name: Format
         run: cargo fmt --all --check
 
+      - name: Install cargo leptos
+        run: cargo install --locked cargo-leptos
+
       - name: Build
         run: spin build
 
